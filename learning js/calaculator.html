@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .container {
+        width: 300px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .input-field {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      .button {
+        width: 60px;
+        height: 30px;
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Simple Calculator</h2>
+      <input type="text" id="num1" class="input-field" placeholder="Number 1" />
+      <select id="operator" class="input-field">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" id="num2" class="input-field" placeholder="Number 2" />
+      <button class="button" onclick="calculate()">Calculate</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function calculate() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var operator = document.getElementById("operator").value;
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var result;
+
+        if (operator == "+") {
+          result = num1 + num2;
+        } else if (operator == "-") {
+          result = num1 - num2;
+        } else if (operator == "*") {
+          result = num1 * num2;
+        } else if (operator == "/") {
+          if (num2 != 0) {
+            result = num1 / num2;
+          } else {
+            result = "Error: Division by zero is not allowed.";
+          }
+        }
+
+        document.getElementById("result").innerHTML = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>

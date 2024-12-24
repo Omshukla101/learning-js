@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello everyone !</h1>
+    <h2>this is the event call</h2>
+    <a href="https://www.facebook.com">facebook1</a>
+    <a href="https://www.facebook.com">facebook2</a>
+    <a href="https://www.facebook.com">facebook3</a>
+    <script>
+      //  creating  event
+      // document.addEventListener("click", function () {
+      //   window.alert("welcom!");
+      // });
+      // let content = document.querySelector("h1");
+      // content.addEventListener("click", function () {
+      //   content.style.background = "red";
+      // });
+      // let eve_nt = document.querySelector("h2");
+      // eve_nt.addEventListener("click", function () {
+      //   eve_nt.style.background = "yellow";
+      // });
+
+      // // deleting event
+      // function EventListener() {
+      //   console.log("hi"); // function should same if we want to remove
+      // }
+      // document.addEventListener("click", EventListener());
+      // document.removeEventListener("click", EventListener());
+
+      // prevent event
+      // let links = document.querySelectorAll("a");
+      // let thirdlink = links[2];
+      // thirdlink.addEventListener("click", function (event) {
+      //   event.preventDefault();
+      //   console.log("maja aa gaya");
+      // });
+
+      // // avoid too many event
+      // let mydiv = document.createElement("div");
+      // function parastatus(event) {
+      //   console.log("para" + event.target.textContent);
+      // }
+      // mydiv.addEventListener("click", parastatus);
+      // for (let i = 0; i <= 100; i++) {
+      //   let newelement = document.createElement("p");
+      //   newelement.textContent = "this is the para" + i;
+
+      //   mydiv.appendChild(newelement);
+      // }
+      // document.body.appendChild(mydiv);
+
+      // let t1 = performance.now();
+
+      // // less reflection and repaint for speedup
+      // let fragment = document.createDocumentFragment();
+      // for (let i = 0; i <= 100; ++i) {
+      //   let newelement = document.createElement("p");
+      //   newelement.textContent = "this is para" + i;
+
+      //   fragment.appendChild(newelement);
+      // }
+      // document.body.appendChild(fragment);
+
+      // let t2 = performance.now();
+      // console.log(t2 - t1);
+
+      // call stack
+      function a(){
+        console.log('hi');
+      }
+
+      function b(){
+        console.log('hello');
+      }
+
+      a()
+      b()
+    </script>
+  </body>
+</html>

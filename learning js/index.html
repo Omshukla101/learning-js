@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello world!</h1>
+    <script>
+      console.log("namaste duniya");
+
+      // Factory function
+      function myName(len, bri) {
+        return {
+          length: len,
+          breadth: bri,
+          draw: function () {
+            console.log("drawing rectangle");
+          },
+        };
+      }
+
+      let h_ow = myName(5, 4); // Corrected variable initialization
+
+      // Constructor function
+      function Rectangle(len, bri) {
+        this.length = len;
+        this.breadth = bri;
+        this.draw = function () {
+          console.log("drawing rectangle");
+        };
+      }
+
+      // Example usage
+      let rect = new Rectangle(6, 3);
+      rect.draw(); // Outputs 'drawing rectangle'
+    </script>
+  </body>
+</html>

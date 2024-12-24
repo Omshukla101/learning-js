@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = [7, 8, 5, 4];
+      console.log(number);
+      // searching
+      console.log(number.includes(8));
+      console.log(number.indexOf(8));
+      // adding of the numbers
+      number.push(6);
+      number.splice(9);
+      number.unshift(3);
+      // deletion of number in array
+      number.pop(); //end
+      number.shift(); //beggining
+      number.splice(2, 1); // middle
+
+      console.log(number);
+
+      let cources = [
+        { no: 1, name: "om" },
+        { no: 2, name: "ram" },
+      ];
+
+      // let cource = cources.find(function(cources){  //collback fuction
+      //   return cources.name == 'om';
+      // })
+
+      let cource = cources.find((cources) => cources.name === "om"); // using arraw functioncollback fuction
+
+      console.log(cource);
+
+      // emptifying the arrey
+      number.length = 0;
+      number.splice(0, number.length);
+
+      // combining Array
+      let first = [1, 2, 3];
+      let second = [4, 5, 6];
+      let combine = first.concat(second);
+      console.log(combine);
+
+      // alternative
+      let combined = [...first, ...second];
+
+      // slice
+      let slice = combine.slice(2, 3);
+
+      console.log(slice);
+    </script>
+  </body>
+</html>

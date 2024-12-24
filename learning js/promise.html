@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   let merapromise = new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //       console.log("i am promise");
+    //     }, 5000);
+    //     //  resolve(2223);
+    //     reject(new Error("bhisab error aa gaya"));
+    //   });
+
+    // merapromise.then((value) => {console.log(value) })
+    // merapromise.catch((Error) => {console.log('recieve an error')})
+
+    // running programm just after one another
+
+    // let wada1 = new Promise(function(resolve,reject){
+    //     setTimeout(() => {console.log('settimeout1 started')},2000);
+    //     resolve(true);
+    // });
+ 
+    // let output = wada1.then(() => {
+    //   let wada2 = new Promise(function(resolve,reject){
+    //     setTimeout(() => {console.log('settimeout2 started')},3000);
+    //    resolve("wada2 resolved");
+    //   })
+    //    return wada2;
+    // })
+    // output.then((value) => console.log(value));
+
+
+    // async function abcd() {
+    //    console.log("kya hua tera");
+    // }
+
+
+  //  in case of multiple assync code we use async function
+  async function utility(){
+    let delhi = new Promise((resolve,reject) =>{
+      setTimeout(() =>{
+        resolve('delhi is hot')
+      },5000);
+    });
+      let hydra = new Promise((resolve,reject) =>{
+      setTimeout(() =>{
+        resolve('hydrabad is cool');
+      },6000);
+
+    });
+    let dm =  delhi;
+    let hm =  hydra;
+
+    return[dm,hm];
+
+    }    
+  
+     
+
+
+    </script>
+  </body>
+</html>

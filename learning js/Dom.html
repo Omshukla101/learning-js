@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="om">my name is om</div>
+    <hr />
+    <div class="surname">shukla</div>
+
+    <script>
+      // Selection
+      let omElement = document.getElementById("om");
+      let surnameElements = document.getElementsByClassName("surname");
+      let divElements = document.getElementsByTagName("div");
+
+      // Manipulating HTML
+      omElement.innerHTML = "hey"; // Changes the content of the #om div to 'hey'
+
+      // Adding a new tag
+      let content = document.querySelector("#om"); // Selects the element with id "om"
+      let para = document.createElement("span"); // Creates a new <span> element
+      para.textContent = "This is a new span element"; // Adds text content to the <span>
+
+      // Append the <span> to the content element at the end
+      content.appendChild(para);
+
+      // Alternatively, you can insert the <span> at the start of #om element
+      // content.insertAdjacentElement('afterbegin', para);  // Inserts at the start of #om
+
+      // Removing the newly added <span> element
+      para.parentNode.removeChild(para); // Removes the <span> from #om
+
+      // Manipulating CSS
+      content.style.color = "red"; // Changes the text color of the #om div to red
+
+      // Selecting and changing the color of the surname div
+      let surnameElement = document.querySelector(".surname");
+      surnameElement.style.color = "red"; // Changes the text color of the .surname div to red
+    </script>
+  </body>
+</html>
