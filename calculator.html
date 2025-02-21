@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f0f0, #c2c2c2);
+}
+
+.calculator {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#result {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: right;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+}
+
+.button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #ccc;
+    transform: scale(1);
+}
+
+.operator {
+    background-color: #ff9f00;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #e68900;
+}
+
+.equal {
+    background-color: #4CAF50;
+    color: white;
+    grid-column: span 2;
+}
+
+.equal:hover {
+    background-color: #45a049;
+}
+
+.clear, .backspace {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.clear:hover, .backspace:hover {
+    background-color: #e60000;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+button:focus {
+    outline: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+        <div class="buttons">
+            <button class="button clear" onclick="clearResult()">C</button>
+            <button class="button backspace" onclick="backspace()">←</button>
+            <button class="button operator" onclick="appendOperator('%')">%</button>
+            <button class="button operator" onclick="appendOperator('/')">/</button>
+
+            <button class="button" onclick="appendNumber(7)">7</button>
+            <button class="button" onclick="appendNumber(8)">8</button>
+            <button class="button" onclick="appendNumber(9)">9</button>
+            <button class="button operator" onclick="appendOperator('*')">*</button>
+
+            <button class="button" onclick="appendNumber(4)">4</button>
+            <button class="button" onclick="appendNumber(5)">5</button>
+            <button class="button" onclick="appendNumber(6)">6</button>
+            <button class="button operator" onclick="appendOperator('-')">-</button>
+
+            <button class="button" onclick="appendNumber(1)">1</button>
+            <button class="button" onclick="appendNumber(2)">2</button>
+            <button class="button" onclick="appendNumber(3)">3</button>
+            <button class="button operator" onclick="appendOperator('+')">+</button>
+
+            <button class="button zero" onclick="appendNumber(0)">0</button>
+            <button class="button" onclick="appendNumber('.')">.</button>
+            <button class="button equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script>
+      let resultField = document.getElementById('result');
+
+function appendNumber(number) {
+    resultField.value += number;
+}
+
+function appendOperator(operator) {
+    resultField.value += operator;
+}
+
+function clearResult() {
+    resultField.value = '';
+}
+
+function backspace() {
+    resultField.value = resultField.value.slice(0, -1);  
+}
+
+function calculateResult() {
+    try {
+       
+        resultField.value = eval(resultField.value);
+    } catch (error) {
+        resultField.value = 'Error';  
+    }
+}
+
+    </script>
+</body>
+</html>

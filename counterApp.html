@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+      /* Reset browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background and font styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for centering the app */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Counter box styling */
+.counter-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Counter display styles */
+.counter-display {
+    font-size: 48px;
+    margin: 20px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Button styles */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Button colors */
+#decrement {
+    background-color: #f44336;
+    color: white;
+}
+
+#reset {
+    background-color: #2196F3;
+    color: white;
+}
+
+#increment {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="counter-box">
+            <h1>Counter</h1>
+            <div class="counter-display">
+                <span id="counter-value">0</span>
+            </div>
+            <div class="buttons">
+                <button id="decrement" class="btn">-</button>
+                <button id="reset" class="btn">Reset</button>
+                <button id="increment" class="btn">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+      // Select the counter value and buttons
+const counterValue = document.getElementById('counter-value');
+const incrementBtn = document.getElementById('increment');
+const decrementBtn = document.getElementById('decrement');
+const resetBtn = document.getElementById('reset');
+
+// Initialize counter value
+let count = 0;
+
+// Update the counter display
+function updateCounter() {
+    counterValue.textContent = count;
+}
+
+// Increment function
+incrementBtn.addEventListener('click', () => {
+    count++;
+    updateCounter();
+});
+
+// Decrement function
+decrementBtn.addEventListener('click', () => {
+    count--;
+    updateCounter();
+});
+
+// Reset function
+resetBtn.addEventListener('click', () => {
+    count = 0;
+    updateCounter();
+});
+
+    </script>
+</body>
+</html>

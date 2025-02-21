@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Reset browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background and font styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+/* Container for centering the app */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Quote box styling */
+.quote-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Quote text styling */
+#quote-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Button styles */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Hover effect for the button */
+button:hover {
+    opacity: 0.8;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="quote-box">
+            <h1>Random Quote</h1>
+            <p id="quote-text">"Click the button to get a new quote!"</p>
+            <button id="generate-quote" class="btn">Get New Quote</button>
+        </div>
+    </div>
+    <script>
+      // Array of random quotes
+const quotes = [
+    "The only way to do great work is to love what you do. – Steve Jobs",
+    "In the middle of difficulty lies opportunity. – Albert Einstein",
+    "Life is what happens when you're busy making other plans. – John Lennon",
+    "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well. – Ralph Waldo Emerson",
+    "It does not matter how slowly you go as long as you do not stop. – Confucius",
+    "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+    "Success is not the key to happiness. Happiness is the key to success. – Albert Schweitzer",
+    "Believe you can and you're halfway there. – Theodore Roosevelt"
+];
+
+// Select the quote text element and button
+const quoteText = document.getElementById('quote-text');
+const generateQuoteBtn = document.getElementById('generate-quote');
+
+// Function to generate a random quote
+function generateRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteText.textContent = quotes[randomIndex];
+}
+
+// Event listener for the button to generate a new quote
+generateQuoteBtn.addEventListener('click', generateRandomQuote);
+
+    </script>
+</body>
+</html>
