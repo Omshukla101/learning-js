@@ -29,13 +29,8 @@ To run these projects locally:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [repository URL]
+    git clone [https://github.com/Omshukla101/learning-js/tree/main]
     ```
-2.  **Navigate to the project directory:**
-    ```bash
-    cd [project directory]
-    ```
-3.  **Open the respective `.html` file in your web browser.** (e.g., `to-do list.html`, `calculator.html`, etc.)
 
 ## Technologies Used
 
